@@ -1,67 +1,125 @@
+*, *::after, *::before {
+  box-sizing: border-box
+}
+
 html, body {
-    margin: 0;
-    padding: 0;
-    background-image: url("./images/table.png");
-    font-family: "Exo 2", sans-serif;
-    height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+body, 
+section, 
+#card-container {
+  display: flex;
+  flex-direction: column;
+  color:antiquewhite;
+  font-family: "Exo 2";
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    color: white;
+  justify-content: space-between;
+  background: #274E13 url("./images/table.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
 }
 
-button {
-    background-color: #FFF100;
-    cursor: pointer;
-    border: none;
+#gameboard {
+  align-items: center;
 }
 
-button#new-deck {
-    align-self: flex-start;
-    padding: 5px;
+h1, p {
+  margin: 0;
 }
 
-button.draw {
-    font-size: 1.2em;
-    padding: 5px;
-    align-self: stretch;
+h1 {
+  font-size: 2.75rem;
+  margin-bottom: .5em;
+  font-weight: 400;
 }
 
-div.card-slot {
-    border: 1px solid black;
-    border-radius: 5px;
-    height: 120px;
-    width: calc(120px * 5 / 7);
+p {
+  font-size: 2.125rem;
+  font-weight: 300;
 }
 
-div.card-slot:nth-of-type(1) {
-    margin-bottom: 10px;
+
+/* =============
+  Deck
+=============== */
+#card-deck {
+  display: flex;
+  align-items: center;
+  margin-top: .75em;
+  position: relative;
+  height: 50px;
 }
 
-img.card {
-    width: 100%;
-    height: 100%;
+#card-deck p {
+  font-size: 1.5rem;
+}
+#card-deck p:nth-child(2) {
+  margin: 0 .25em 0 6.5em;
 }
 
-div.top {
-    display: flex;
-    align-items: flex-start;
-    align-self: flex-start;
+/* =============
+  Cards
+=============== */
+#status-message {
+  font-size: 2rem;
 }
 
-div.top > p {
-    margin: 0;
-    margin-left: 10px;
+#card-container {
+  align-items: center;
+  gap: 3em;
+  margin: .75em 0;
+}
+
+.card-slot {
+  height: 150px;
+  aspect-ratio: 5 / 7;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.card-slot img {
+  width: 100%;
+  height: 100%;
+}
+
+/* ============
+  Score
+============= */
+.score-container {
+  display: flex;
+  gap: .5em;
+}
+
+/* ============
+  Buttons
+============= */
+
+.btn {
+  font-weight: bold;
+  padding: 1em;
+  border: none;
+  background-color:gold;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+#get-new-deck {
+  position: absolute;
+  left: -5px;
+  height: 100%;
+}
+
+#draw-cards {
+  width: 100%;
 }
 
 button:disabled {
-    cursor: not-allowed;
-}
-
-h2 {
-    margin: 10px;
+  cursor: not-allowed;
 }
